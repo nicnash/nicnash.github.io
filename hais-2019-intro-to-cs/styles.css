@@ -1,0 +1,26 @@
+body {
+  font-family: "Red Hat Display", sans-serif;
+  margin: 0px;
+}
+
+.lesson {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+li.empty {
+  /* display: none; */
+  background-color: #f9f9f9;
+  list-style-type: none;
+}
+
+.root li > ul {
+  background-color: #f9f9f9;
+}
+
+.progress-bar {
+  position: fixed;
+  height: 20px;
+  /* width:55%; */
+  background-color: #a3d9e7;
+}

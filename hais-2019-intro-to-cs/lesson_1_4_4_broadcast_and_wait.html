@@ -1,5 +1,153 @@
-<h1># Lesson 1.4: Animation</h1>
+<!-- <link href="./styles.css" rel="preload" as="style"> -->
+<link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
 
-<h2>Broadcast</h2>
-<img src="./img/lesson_14_broadcast.png" alt="">
-<a href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-rotate">Example</a>
+<h1>Lesson 1.4: Animation</h1>
+
+<h2>Broadcast and Wait and Receive</h2>
+<ul class="root">
+  <li>What if we want to continue on once all the items are done?</li>
+  <li>Definition</li>
+  <li class="empty">
+    <ul>
+      <li>Sends a message to all the sprites and the stage AND waits until they are all finished to continue</li>
+      <li>Also works in conjunction with "When I receive"</li>
+    </ul>
+  </li>
+
+  <li>
+    Simple
+    <a
+      href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-rotate"
+      >example:</a
+    >
+    I broadcast fly to all sprites. Each sprite that receives fly will start to fly
+  </li>
+  <li>How many subscribers can there be?</li>
+  <li>
+    What are real life examples of broacast and receive?
+  </li>
+  <li class="empty">
+    <ul>
+      <li>Megaphone</li>
+      <li>Airplain announcements</li>
+      <li>Class Rollcall</li>
+      <li>Mom yelling your name</li>
+      <li>Food announcements over intercom</li>
+      <li>Traffic Light</li>
+      <li>Television</li>
+    </ul>
+  </li>
+
+  <li>Where in software have we seen this?</li>
+  <li class="empty">
+    <ul>
+      <li>Chatrooms</li>
+      <li>Podcasts</li>
+      <li>Youtube subscriptions</li>
+      <li>Following people on instagram, twitter, etc</li>
+      <li>Load balancing</li>
+      <li>Asynchronous workflows (doing multiple things at the same time)</li>
+      <!-- <li>really techincal examples</li>
+    <ul>
+      <li>
+        Balancing workloads in network clusters. For example, a large queue of
+        tasks can be efficiently distributed among multiple workers, such as
+        Google Compute Engine instances.
+      </li>
+      <li>
+        Implementing asynchronous workflows. For example, an order processing
+        application can place an order on a topic, from which it can be
+        processed by one or more workers.
+      </li>
+      <li>
+        Distributing event notifications. For example, a service that accepts
+        user signups can send notifications whenever a new user registers, and
+        downstream services can subscribe to receive notifications of the event.
+      </li>
+    </ul> -->
+    </ul>
+  </li>
+  <li>
+    <img style="width:400px;" src="./img/lesson_14_broadcast.png" alt="" />
+  </li>
+  <li>
+    <a
+      href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-rotate"
+      >Example</a
+    >
+  </li>
+  <li>Thought Experiments</li>
+  <li class="empty">
+    <ul>
+      <li>
+        What happens if we dont have a recieve block?
+      </li>
+      <li>Are there things that roadcast can do that other things cant? What makes it special?</li>
+      <li>
+        What if we recieve a message, then broadcast to that same message?
+        <a
+          href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-circle"
+          >Example</a
+        >
+      </li>
+      <li>
+        How can we make the bats stay together? We could put the broadcast on the slowest one.
+      </li>
+      <li>
+        What if we dont know how long each bat will take?
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div>
+  Next: 1.4.4
+  <a href="lesson_1_4_4_broadcast_and_wait.html">Broadcast and Wait</a>
+</div>
+<script>
+  let step = 1;
+  document.addEventListener("DOMContentLoaded", function(event) {
+    document.querySelectorAll(".root>li").forEach(element => {
+      element.style.cssText = "visibility: hidden;";
+    });
+    document.querySelectorAll(".root>li")[0].style.cssText = "visibility:visible";
+  });
+
+  document.onkeydown = e => {
+    console.log("e.keyCode", e.keyCode);
+    e = e || window.event;
+    if (e.keyCode == "72") {
+      // h - hide
+      document.querySelectorAll(".root>li").forEach(element => {
+        element.style.cssText = "visibility: hidden;";
+      });
+    } else if (e.keyCode == "83") {
+      // s - show
+      document.querySelectorAll(".root>li").forEach(element => {
+        element.style.cssText = "visibility: visible;";
+      });
+    } else if (e.keyCode == "37") {
+      // left arrow
+      step = step - 1;
+      document.querySelectorAll(".root>li").forEach(element => {
+        element.style.cssText = "visibility: hidden;";
+      });
+      const steps = document.querySelectorAll(".root>li");
+
+      for (let index = 0; index < step; index++) {
+        const element = steps[index];
+        element.style.cssText = "visibility: visible;";
+      }
+    } else if (e.keyCode == "39") {
+      // right arrow
+      const steps = document.querySelectorAll(".root>li");
+      step++;
+
+      for (let index = 0; index < step; index++) {
+        const element = steps[index];
+        element.style.cssText = "visibility: visible;";
+      }
+    }
+  };
+</script>
