@@ -86,50 +86,23 @@
 <script>
   let step = 1;
   document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("hi");
-    console.log(document.querySelectorAll(".root>li"));
     document.querySelectorAll(".root>li").forEach(element => {
       element.style.cssText = "visibility: hidden;";
     });
-
-    // $ (".div").hide();
-    // $(".categorythumbnaillist_item:lt(5)").show();
   });
 
-  // document.addEventListener("click", function() {
-  //   document.getElementById("demo").innerHTML = "Hello World";
-  // });
-
-  document.onkeydown = checkKey;
-
-  function checkKey(e) {
+  document.onkeydown = e => {
     e = e || window.event;
 
-    if (e.keyCode == "38") {
-      // up arrow
-    } else if (e.keyCode == "40") {
-      // down arrow
-    } else if (e.keyCode == "37") {
-      // left arrow
-    } else if (e.keyCode == "39") {
+    if (e.keyCode == "39") {
       // right arrow
-      // document.querySelectorAll(".root>li").forEach(element => {
-      //   element.style.cssText = "opacity: 0";
-      // });
-      console.log(typeof document.querySelectorAll(".root>li"));
-      console.log(document.querySelectorAll(".root>li"));
       const steps = document.querySelectorAll(".root>li");
 
       for (let index = 0; index < step; index++) {
         const element = steps[index];
-        console.log("element", element);
         element.style.cssText = "visibility: visible;";
       }
       step++;
-      // .slice(0, step++)
-      // .forEach(element => {
-      //   element.style.cssText = "opacity: 100";
-      // });
     }
-  }
+  };
 </script>
