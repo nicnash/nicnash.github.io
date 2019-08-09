@@ -1,153 +1,71 @@
-<!-- <link href="./styles.css" rel="preload" as="style"> -->
 <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="styles.css" />
+<html>
+  <head>
+    <title>1.4.4 Broadcast and Wait</title>
+  </head>
+  <body>
+    <div class="progress-bar" width="10%"></div>
+    <div class="lesson">
+      <h1>Lesson 1.4.4: Animation - Broadcast and Wait</h1>
 
-<h1>Lesson 1.4: Animation</h1>
+      <ul class="root">
+        <li>What if we want to continue on once all the items are done?</li>
+        <li>
+          <a href="img/lesson_1_4_3_broadcast.png">Definition</a>
+          <ul>
+            <li>Sends a message to all the sprites and the stage AND waits until they are all finished to continue</li>
+            <li>Also works in conjunction with "When I receive"</li>
+          </ul>
+        </li>
 
-<h2>Broadcast and Wait and Receive</h2>
-<ul class="root">
-  <li>What if we want to continue on once all the items are done?</li>
-  <li>Definition</li>
-  <li class="empty">
-    <ul>
-      <li>Sends a message to all the sprites and the stage AND waits until they are all finished to continue</li>
-      <li>Also works in conjunction with "When I receive"</li>
-    </ul>
-  </li>
+        <li>
+          <a
+            href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-and-wait"
+            >Broadcast and Wait Example</a
+          >
+          I 'broadcast and wait' 'fly' to all sprites. Wait for each bat to fly before starting again.
+        </li>
+        <li>
+          What are real life examples of broacast and receive?
+        </li>
+        <li class="empty">
+          <ul>
+            <li>Airplain announcements - Wait until that group boards the plane until announcing next group</li>
+            <li>Mom yelling your name - She will be waiting for response</li>
+            <li>Bus picking up students at different stops - Wait for all kids to load before driving off</li>
+            <li>Class Rollcall - Wait till you raise your hand before going to next name</li>
+            <li>Often we want to wait for a task to complete before continuing</li>
+          </ul>
+        </li>
 
-  <li>
-    Simple
-    <a
-      href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-rotate"
-      >example:</a
-    >
-    I broadcast fly to all sprites. Each sprite that receives fly will start to fly
-  </li>
-  <li>How many subscribers can there be?</li>
-  <li>
-    What are real life examples of broacast and receive?
-  </li>
-  <li class="empty">
-    <ul>
-      <li>Megaphone</li>
-      <li>Airplain announcements</li>
-      <li>Class Rollcall</li>
-      <li>Mom yelling your name</li>
-      <li>Food announcements over intercom</li>
-      <li>Traffic Light</li>
-      <li>Television</li>
-    </ul>
-  </li>
+        <li>Where in software have we seen this?</li>
+        <li class="empty">
+          <ul>
+            <li>Starting multiplayer video game matches</li>
+            <li>Software that is loading</li>
+            <li>Websites any time you see a loading indicator - Downloads all information before displaying it.</li>
+          </ul>
+        </li>
+        <li>Thought Experiments</li>
+        <li class="empty">
+          <ul>
+            <!-- <li>
+              What if we recieve a message, then broadcast to that same message? - im not actually sure
+              <a
+                href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-circle"
+                >Example</a
+              >
+            </li> -->
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-  <li>Where in software have we seen this?</li>
-  <li class="empty">
-    <ul>
-      <li>Chatrooms</li>
-      <li>Podcasts</li>
-      <li>Youtube subscriptions</li>
-      <li>Following people on instagram, twitter, etc</li>
-      <li>Load balancing</li>
-      <li>Asynchronous workflows (doing multiple things at the same time)</li>
-      <!-- <li>really techincal examples</li>
-    <ul>
-      <li>
-        Balancing workloads in network clusters. For example, a large queue of
-        tasks can be efficiently distributed among multiple workers, such as
-        Google Compute Engine instances.
-      </li>
-      <li>
-        Implementing asynchronous workflows. For example, an order processing
-        application can place an order on a topic, from which it can be
-        processed by one or more workers.
-      </li>
-      <li>
-        Distributing event notifications. For example, a service that accepts
-        user signups can send notifications whenever a new user registers, and
-        downstream services can subscribe to receive notifications of the event.
-      </li>
-    </ul> -->
-    </ul>
-  </li>
-  <li>
-    <img style="width:400px;" src="./img/lesson_14_broadcast.png" alt="" />
-  </li>
-  <li>
-    <a
-      href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-rotate"
-      >Example</a
-    >
-  </li>
-  <li>Thought Experiments</li>
-  <li class="empty">
-    <ul>
-      <li>
-        What happens if we dont have a recieve block?
-      </li>
-      <li>Are there things that roadcast can do that other things cant? What makes it special?</li>
-      <li>
-        What if we recieve a message, then broadcast to that same message?
-        <a
-          href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-circle"
-          >Example</a
-        >
-      </li>
-      <li>
-        How can we make the bats stay together? We could put the broadcast on the slowest one.
-      </li>
-      <li>
-        What if we dont know how long each bat will take?
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<div>
-  Next: 1.4.4
-  <a href="lesson_1_4_4_broadcast_and_wait.html">Broadcast and Wait</a>
-</div>
-<script>
-  let step = 1;
-  document.addEventListener("DOMContentLoaded", function(event) {
-    document.querySelectorAll(".root>li").forEach(element => {
-      element.style.cssText = "visibility: hidden;";
-    });
-    document.querySelectorAll(".root>li")[0].style.cssText = "visibility:visible";
-  });
-
-  document.onkeydown = e => {
-    console.log("e.keyCode", e.keyCode);
-    e = e || window.event;
-    if (e.keyCode == "72") {
-      // h - hide
-      document.querySelectorAll(".root>li").forEach(element => {
-        element.style.cssText = "visibility: hidden;";
-      });
-    } else if (e.keyCode == "83") {
-      // s - show
-      document.querySelectorAll(".root>li").forEach(element => {
-        element.style.cssText = "visibility: visible;";
-      });
-    } else if (e.keyCode == "37") {
-      // left arrow
-      step = step - 1;
-      document.querySelectorAll(".root>li").forEach(element => {
-        element.style.cssText = "visibility: hidden;";
-      });
-      const steps = document.querySelectorAll(".root>li");
-
-      for (let index = 0; index < step; index++) {
-        const element = steps[index];
-        element.style.cssText = "visibility: visible;";
-      }
-    } else if (e.keyCode == "39") {
-      // right arrow
-      const steps = document.querySelectorAll(".root>li");
-      step++;
-
-      for (let index = 0; index < step; index++) {
-        const element = steps[index];
-        element.style.cssText = "visibility: visible;";
-      }
-    }
-  };
-</script>
+    <div>
+      Next: 1.4.5
+      <a href="lesson_1_4_5_rotate.html">Rotate Buttons</a>
+    </div>
+  </body>
+</html>
+<script src="script.js"></script>

@@ -1,7 +1,10 @@
 let step = 1;
 let stepCount;
 document.addEventListener("DOMContentLoaded", function(event) {
+  window.scrollTo(0, 0);
+  step = 1;
   stepCount = document.querySelectorAll(".root>li").length;
+  console.log('stepCount',stepCount);
   document.querySelectorAll(".root>li").forEach(element => {
     element.style.cssText = "visibility: hidden;";
   });
