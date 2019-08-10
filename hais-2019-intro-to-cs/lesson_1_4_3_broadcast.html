@@ -12,9 +12,11 @@
       <ul class="root">
         <li>What if one sprite wants to effect another sprite?</li>
         <li>
-          <a href="img/lesson_1_4_3_broadcast.png">Definition</a>
+          Broadcast <a href="img/lesson_1_4_3_broadcast.png">Definition</a>
+          <!-- - Remember, a few hours of trial and error can save you several minutes of looking at the Docs -->
           <ul>
             <li>Sends a message to all the sprites and the stage</li>
+            <li>Those sprites will choose to 'hear' or receive certain messages and act on them</li>
             <li>This is useful if you want to tell other sprites when to do something</li>
             <li>Works in conjunction with "When I receive"</li>
           </ul>
@@ -23,7 +25,9 @@
 
         <!-- </li> -->
 
-        <li>It lets sprites communicate - this is BIG!</li>
+        <li>
+          It lets sprites communicate - this is BIG! - It opens you up to a world of possible uses and code organization
+        </li>
         <li>Also known as a pub / sub pattern (publish / subscribe)</li>
         <li>
           <a
@@ -32,17 +36,14 @@
           </a>
           - I broadcast fly to all sprites. Each sprite that receives fly will start to fly
         </li>
-        <li>How many subscribers can there be?</li>
         <li>
           What are real life examples of broacast and receive?
         </li>
         <li class="empty">
           <ul>
-            <li>Megaphone</li>
             <li>Air-plane Boarding Announcements</li>
             <li>Class Rollcall</li>
             <li>Mom yelling your name - I dont subscribe to that name mom</li>
-            <li>Food announcements over intercom</li>
             <li>Traffic Light</li>
             <li>Television channels</li>
           </ul>
@@ -51,40 +52,65 @@
         <li>Where in software have we seen this?</li>
         <li class="empty">
           <ul>
-            <li>Chatrooms</li>
-            <li>Podcasts</li>
+            <li>Chatroom messaging</li>
+            <li>Podcast subscriptions</li>
             <li>Youtube subscriptions</li>
             <li>Following people on instagram, twitter, etc</li>
             <li>Load balancing - large queue of tasks can be efficiently distributed among multiple workers</li>
-            <li>Asynchronous workflows - doing multiple things at the same time - Laundromat</li>
+            <li>Asynchronous workflows - doing multiple things at the same time - transcoding video</li>
           </ul>
         </li>
         <li>Thought Experiments</li>
-        <li>
-          What tool category do you think it falls under?
-          <img src="./img/lesson_1_4_3_categories.png" style="width:200px;" alt="" />
+        <li class="empty">
+          <ul>
+            <li>How many subscribers can there be?</li>
+          </ul>
         </li>
-        <li>
-          What happens if we dont have a recieve block?
+        <li class="empty">
+          <ul>
+            <li>
+              What tool category do you think it falls under?
+              <img src="./img/lesson_1_4_3_categories.png" style="width:200px;" alt="" />
+            </li>
+          </ul>
         </li>
-        <li>Are there things that Broadcast can do that other things can't? What makes it special?</li>
+        <li class="empty">
+          <ul>
+            <li>
+              What happens if we dont have a recieve block?
+            </li>
+          </ul>
+        </li>
+        <!-- <li>Are there things that Broadcast can do that other things can't? What makes it special?</li> -->
         <li class="empty">
           <ul>
             <li>Can other elements communicate between sprites?</li>
           </ul>
         </li>
-        <li>
-          What if we recieve a message, then broadcast to that same message?
-          <a
-            href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-circle"
-            >Demo</a
-          >
+        <li class="empty">
+          <ul>
+            <li>
+              What if we recieve a message, then broadcast to that same message?
+              <a
+                href="https://cloud.snap.berkeley.edu/snapsource/snap.html#present:Username=nicnash&ProjectName=Lesson%201.4-broadcast-circle"
+                >Demo</a
+              >
+            </li>
+          </ul>
         </li>
-        <li>
-          How can we make the bats stay together? We could put the broadcast on the slowest one.
+        <li class="empty">
+          <ul>
+            <li>
+              How can we make the bats stay together? We could put the broadcast on the slowest one.
+            </li>
+          </ul>
         </li>
-        <li>
-          What if we dont know how long each bat will take?
+        <li class="empty">
+          <ul>
+            <li>
+              What if we dont know how long each bat will take?
+            </li>
+          </ul>
         </li>
       </ul>
 
